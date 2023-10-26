@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+
+
+
+
+
+import { useState } from "react";
+import Location from "./Location.js";
+import Ordersummery from "./Ordersummary.js";
+import Header from "./Header.js"
+import "./App.css"
+import Pay from "./Pay.js"
+import Footer from "./Footer.js";
+
+function App() 
+{
+    const [paymentOptScr,setPaymentOptScr]=useState(false);
+    
+    return<div id="parentscreen">
+         <Header/>
+         <div id="screenbox">
+        <Location/>
+        <Ordersummery showPaymentOptionScreen={setPaymentOptScr} />
+        <Pay isVisible={paymentOptScr} showPaymentOptionScreen={setPaymentOptScr}  />   
+        </div>
+        <Footer/>
     </div>
-  );
 }
-
 export default App;
