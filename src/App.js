@@ -13,6 +13,7 @@ import Header from "./Header.js"
 import "./App.css"
 import Pay from "./Pay.js"
 import Footer from "./Footer.js";
+import Cal from "./cal.js"
 
 function App() 
 {
@@ -26,6 +27,7 @@ function App()
         <Pay isVisible={paymentOptScr} showPaymentOptionScreen={setPaymentOptScr}  />   
         </div>
         <Footer/>
+        {/* <Cal/> */}
     </div>
 }
 export default App;
